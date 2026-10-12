@@ -159,7 +159,7 @@ export const VideoWalkthrough: React.FC<VideoWalkthroughProps> = ({
           >
             <source src={PROPERTY_WALKTHROUGH_VIDEO_URL} type="video/mp4" />
             <source
-              src="/src/Max%20Pets%20Corner%20Dogcare%20facility%20walkthrough.mp4"
+              src="/Max%20Pets%20Corner%20Dogcare%20facility%20walkthrough.mp4"
               type="video/mp4"
             />
           </video>

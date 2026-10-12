@@ -7,9 +7,9 @@
  */
 
 export const PROPERTY_WALKTHROUGH_VIDEO_URL: string =
-  "/Max%20Pets%20Corner%20Dogcare%20facility%20walkthrough.mp4";
+  "/facility_walkthrough.mp4";
 export const PROPERTY_WALKTHROUGH_POSTER_URL: string =
-  "/Max%20Pet%20Corner_broder%20angle%20image%20of%20care%20facility.jpeg";
+  "/facility_angle.jpeg";
 
 export const FACEBOOK_URL: string = "";
 export const INSTAGRAM_URL: string = "";
@@ -259,49 +259,49 @@ export const LOCKED_COPY = {
 
   images: {
     logo: {
-      src: "/Max%20Pet%20Corner%20Logo.jpeg",
+      src: "/logo.jpeg",
       alt: "Max Pet Corner Logo",
     },
     hero: {
-      src: "/Max%20Pet%20Corner_broder%20angle%20image%20of%20care%20facility.jpeg",
+      src: "/facility_angle.jpeg",
       alt: "Max Pet Corner air-conditioned dog daycare facility in Dum Dum, Kolkata",
     },
     facilityGallery: [
       {
-        src: "/dogs%20in%20Max%20Pet%20Corner%20dogs%20in%20care%20facility.jpeg",
+        src: "/dog_care_1.jpeg",
         alt: "Dogs cared for inside Max Pet Corner dog daycare facility in Dum Dum, Kolkata",
       },
       {
-        src: "/dogs%20in%20Max%20Pet%20Corner%20dogs%20in%20care%20facility%202.jpeg",
+        src: "/dog_care_2.jpeg",
         alt: "Happy dog enjoying daycare at Max Pet Corner on RN Guha Road, Dum Dum",
       },
       {
-        src: "/dogs%20in%20Max%20Pet%20Corner%20dogs%20in%20care%20facility%203.jpeg",
+        src: "/dog_care_3.jpeg",
         alt: "Dogs relaxing comfortably in the air-conditioned Max Pet Corner daycare space",
       },
       {
-        src: "/dogs%20in%20Max%20Pet%20Corner%20dogs%20in%20care%20facility%204.jpeg",
+        src: "/dog_care_4.jpeg",
         alt: "Attentive daytime pet care at Max Pet Corner in Dum Dum, Kolkata",
       },
       {
-        src: "/dogs%20in%20Max%20Pet%20Corner%20dogs%20in%20care%20facility%205.jpeg",
+        src: "/dog_care_5.jpeg",
         alt: "Dogs spending the day at Max Pet Corner daycare facility",
       },
       {
-        src: "/Max%20Pet%20Corner_broder%20angle%20image%20of%20care%20facility.jpeg",
+        src: "/facility_angle.jpeg",
         alt: "Broader angle view of Max Pet Corner dog care facility on RN Guha Road, Dum Dum",
       },
     ],
     benefitCool: {
-      src: "/dogs%20in%20Max%20Pet%20Corner%20dogs%20in%20care%20facility%202.jpeg",
+      src: "/dog_care_2.jpeg",
       alt: "Dog resting comfortably in a cool indoor air-conditioned daycare environment at Max Pet Corner",
     },
     benefitCare: {
-      src: "/dogs%20in%20Max%20Pet%20Corner%20dogs%20in%20care%20facility.jpeg",
+      src: "/dog_care_1.jpeg",
       alt: "Dogs in Max Pet Corner care facility in Dum Dum, Kolkata",
     },
     benefitPlay: {
-      src: "/dogs%20in%20Max%20Pet%20Corner%20dogs%20in%20care%20facility%203.jpeg",
+      src: "/dog_care_3.jpeg",
       alt: "Friendly dogs enjoying their day together indoors at Max Pet Corner",
     },
   },

@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { PawPrint } from "lucide-react";
 
 interface ResilientImageProps {
@@ -16,8 +16,8 @@ interface ResilientImageProps {
 /**
  * Zero-Broken-Image Component
  * Renders a high-resolution image with referrerPolicy="no-referrer" and explicit dimensions
- * to prevent Cumulative Layout Shift (CLS). If the image fails to load, displays a warm
- * architectural fallback card with a minimal paw emblem.
+ * to prevent Cumulative Layout Shift (CLS). If the image fails to load, attempts alternative
+ * static paths before displaying a warm architectural fallback card.
  */
 export const ResilientImage: React.FC<ResilientImageProps> = ({
   src,
@@ -30,9 +30,33 @@ export const ResilientImage: React.FC<ResilientImageProps> = ({
   height = 600,
   fallbackLabel = "Max Pet Corner · Dum Dum, Kolkata",
 }) => {
+  const [currentSrc, setCurrentSrc] = useState(src);
   const [hasError, setHasError] = useState(false);
+  const [retryAttempted, setRetryAttempted] = useState(false);
 
-  if (hasError || !src) {
+  useEffect(() => {
+    setCurrentSrc(src);
+    setHasError(false);
+    setRetryAttempted(false);
+  }, [src]);
+
+  const handleError = () => {
+    if (!retryAttempted) {
+      setRetryAttempted(true);
+      // Try media subdirectory or clean path
+      if (currentSrc.startsWith("/media/")) {
+        setCurrentSrc(currentSrc.replace("/media/", "/"));
+      } else if (currentSrc.startsWith("/")) {
+        setCurrentSrc(`/media${currentSrc}`);
+      } else {
+        setHasError(true);
+      }
+    } else {
+      setHasError(true);
+    }
+  };
+
+  if (hasError || !currentSrc) {
     return (
       <div
         className={`flex flex-col items-center justify-center bg-[#DDE7D8]/60 text-[#234737] p-8 text-center select-none ${containerClassName}`}
@@ -51,14 +75,15 @@ export const ResilientImage: React.FC<ResilientImageProps> = ({
   return (
     <div className={`overflow-hidden bg-[#DDE7D8]/30 ${containerClassName}`}>
       <img
-        src={src}
+        src={currentSrc}
         alt={alt}
         width={width}
         height={height}
         loading={loading}
+        decoding="async"
         fetchPriority={fetchPriority}
         referrerPolicy="no-referrer"
-        onError={() => setHasError(true)}
+        onError={handleError}
         className={className}
       />
     </div>
